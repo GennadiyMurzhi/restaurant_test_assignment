@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:test_assignment_effective/app/main/pages/bag_cubit/bag_cubit.dart';
 import 'package:test_assignment_effective/domain/dish.dart';
+import 'package:test_assignment_effective/ui/image_frame_builder.dart';
 import 'package:test_assignment_effective/ui/main/widgets/pages/bag_button_widget.dart';
 import 'package:test_assignment_effective/ui/main/widgets/pages/home_page/product_dialog_button_widget.dart';
 import 'package:test_assignment_effective/ui/main/widgets/pages/price_weight_widget.dart';
@@ -33,8 +34,10 @@ class ProductDialogWidget extends StatelessWidget {
           children: <Widget>[
             Container(
               width: double.maxFinite,
-              decoration:
-                  const BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(10)), color: Color(0xFFF8F7F5)),
+              decoration: const BoxDecoration(
+                borderRadius: BorderRadius.all(Radius.circular(10)),
+                color: Color(0xFFF8F7F5),
+              ),
               child: Stack(
                 alignment: Alignment.center,
                 children: <Widget>[
@@ -43,6 +46,7 @@ class ProductDialogWidget extends StatelessWidget {
                     child: Image.network(
                       dish.imageUrl,
                       height: 204,
+                      frameBuilder: imageFrameBuilder,
                     ),
                   ),
                   Positioned(

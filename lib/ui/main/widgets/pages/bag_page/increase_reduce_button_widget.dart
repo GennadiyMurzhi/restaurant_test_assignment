@@ -5,15 +5,18 @@ class IncreaseReduceButtonWidget extends StatelessWidget {
     super.key,
     required this.onTap,
     required this.iconData,
+    required this.borderRadius,
   });
 
   final void Function() onTap;
   final IconData iconData;
+  final double borderRadius;
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: onTap,
+      borderRadius: BorderRadius.all(Radius.circular(borderRadius)),
       child: Padding(
         padding: const EdgeInsets.symmetric(
           vertical: 4,

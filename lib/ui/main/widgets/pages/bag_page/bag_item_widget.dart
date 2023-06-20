@@ -19,6 +19,7 @@ class BagItemWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     const double imageContainerSize = 62;
+    const double borderRadius = 10;
 
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -56,7 +57,7 @@ class BagItemWidget extends StatelessWidget {
           height: 32,
           decoration: const BoxDecoration(
             color: Color(0xFFEFEEEC),
-            borderRadius: BorderRadius.all(Radius.circular(10)),
+            borderRadius: BorderRadius.all(Radius.circular(borderRadius)),
           ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -64,6 +65,7 @@ class BagItemWidget extends StatelessWidget {
               IncreaseReduceButtonWidget(
                 onTap: onReduceCount,
                 iconData: RestaurantIcons.delete,
+                borderRadius: borderRadius,
               ),
               Text(
                 orderItem.count.toString(),
@@ -72,6 +74,7 @@ class BagItemWidget extends StatelessWidget {
               IncreaseReduceButtonWidget(
                 onTap: onIncreaseCount,
                 iconData: RestaurantIcons.add,
+                borderRadius: borderRadius,
               ),
             ],
           ),
